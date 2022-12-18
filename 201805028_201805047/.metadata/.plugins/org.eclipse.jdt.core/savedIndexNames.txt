@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Eðitim\Flutter\Data_Structures\201805028_201805047\.metadata\.plugins\org.eclipse.jdt.core
