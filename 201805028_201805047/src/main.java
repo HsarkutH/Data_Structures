@@ -51,6 +51,7 @@ public class Main {
 		
 		
 		Scanner scan = new Scanner(System.in);
+		Items[] item = new Items[10];
 		
 		//menu
 		
@@ -68,7 +69,7 @@ public class Main {
 		
 		//end of menu
 		
-		Switch(choice){
+		switch(choice){
 			
 			
 			case 1:
