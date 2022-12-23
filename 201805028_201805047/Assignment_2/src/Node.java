@@ -1,6 +1,7 @@
 
 public class Node {
-	int barcodeNumber, quantity;
+	int barcodeNumber;
+	int quantity;
 	String productName;
 	Node left,right;
 	
@@ -10,5 +11,6 @@ public class Node {
 		this.productName=productName;
 		left=right=null;
 	}
+	
 
 }

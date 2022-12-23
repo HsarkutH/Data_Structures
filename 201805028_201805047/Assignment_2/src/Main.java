@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.LinkedList;
 
 
 
@@ -7,9 +6,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		//decleare the variables
 		int choice;
-		int i = 0;
-		//int arrSize=5;
 		int itemchoose;
 		int increaseAmount;
 		String newItem;
@@ -17,10 +15,10 @@ public class Main {
 		int newBarcodeNumber;
 			
 			
-		/*LinkedList<String> productNames = new LinkedList<>();
-		LinkedList<Integer> quantity = new LinkedList<>();
-		LinkedList<Integer> barcodeNumber = new LinkedList<>();*/
+		
 		BinarySearchTree tree = new BinarySearchTree();
+		
+		//insert the default 5 products
 		tree.insert(23, 150, "Ekler");
 		tree.insert(38, 200, "Baklava");
 		tree.insert(41, 50, "Pasta");
@@ -29,26 +27,7 @@ public class Main {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		/*productNames.addFirst("Ekler");
-		productNames.add("Baklava");
-		productNames.add("Pasta");
-		productNames.add("Bomba");
-		productNames.add("Kurabiye");
-		quantity.add(20);
-		quantity.add(10);
-		quantity.add(5);
-		quantity.add(30);
-		quantity.add(50);
-		barcodeNumber.add(42);
-		barcodeNumber.add(86);
-		barcodeNumber.add(95);
-		barcodeNumber.add(13);
-		barcodeNumber.add(79);*/
-		/*item[0] = new Items(50,20,"Ekler");
-		item[1] = new Items(100,15,"Baklava");
-		item[2] = new Items(20,3,"Pasta");
-		item[3] = new Items(150,18,"Bomba");
-		item[4] = new Items(200,42,"Kurabiye");*/
+		
 		
 			
 			//menu
@@ -69,74 +48,70 @@ public class Main {
 			
 			switch(choice){
 				
-				
+				//insert the new product
 				case 1:
-					System.out.print("Please enter the barcode number of new item: ");
+					//take the barcode number for new product
+					System.out.print("Please enter the barcode number of new product: ");
 					newBarcodeNumber = scan.nextInt();
-					System.out.print("Please enter the quantityy of new item: ");
+					//take the amount of new product
+					System.out.print("Please enter the quantity of new product: ");
 					newQuantity = scan.nextInt();
 					scan.nextLine();
+					//take the name of new product
 					System.out.print("Please enter the product name: ");
 					newItem = scan.nextLine();
 					System.out.println();
+					//add to the tree
+					tree.insert(newBarcodeNumber, newQuantity, newItem);
 					
-					/*productNames.add(newItem);
-					quantity.add(newQuantity);
-					barcodeNumber.add(newBarcodeNumber);*/
-					
-					/*while(i<productNames.size())
-					{
-						System.out.println("Product Name: "+ productNames.get(i));
-						System.out.println("Quantity: "+ quantity.get(i));
-						System.out.println("Barcode Number: "+barcodeNumber.get(i));
-						System.out.println();
-						i++;
-					}
-					
-					System.out.println(barcodeNumber.size());
-					i=0;*/
 					break;
+					
+				//increase the amount of a product	
 				case 2:
-					/*while(i<productNames.size())
-					{
-						System.out.println(i+1 +": "+productNames.get(i));
-						i++;
-					}
-					System.out.print("Please choose the item: ");
-					itemchoose = scan.nextInt()-1;
+					//choose the product by barcode number
+					System.out.print("Please enter the barcode number of the product: ");
+					itemchoose = scan.nextInt();
+					//set the amount that user wants to increase
 					System.out.print("Amount of increase: ");
 					increaseAmount = scan.nextInt();
 					
-					quantity.set(itemchoose, quantity.get(itemchoose)+increaseAmount);
-					//System.out.println(quantity.get(itemchoose));*/
-					i=0;
+					//decrease the amount of product
+					tree.increaseQuantity(increaseAmount,itemchoose);
 					break;
+					
+				//decrease the amount of a product
 				case 3:
-					/*while(i<productNames.size())
-					{
-						System.out.println(i+1 +": "+productNames.get(i));
-						i++;
-					}
-					System.out.print("Please choose the item: ");
-					itemchoose = scan.nextInt()-1;
+					//choose the product by barcode number
+					System.out.print("Please enter the barcode number of the product: ");
+					itemchoose = scan.nextInt();
+					//set the amount that user wants to decrease
 					System.out.print("Amount of decrease: ");
 					increaseAmount = scan.nextInt();
 					
-					quantity.set(itemchoose, quantity.get(itemchoose)-increaseAmount);*/
-					i=0;
+					//decrease the amount of product
+					tree.decreaseQuantity(increaseAmount, itemchoose);
 					break;
+					
+				//print in-order
 				case 4:
 					tree.inorder();
 					break;
+					
+				//print post-order
 				case 5:
 					tree.postorder();
 					break;
+				//print pre-order
 				case 6:
 					tree.preorder();
 					break;
+				
+				//Terminate the program
 				case 0:
 					System.out.println("Terminating the program...");
 					System.exit(0);
+					
+				//default case
 				default:
 					System.out.println("Error: Invalid input");
 					System.exit(0);
