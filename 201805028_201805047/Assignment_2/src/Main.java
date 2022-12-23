@@ -17,12 +17,19 @@ public class Main {
 		int newBarcodeNumber;
 			
 			
-		LinkedList<String> productNames = new LinkedList<>();
+		/*LinkedList<String> productNames = new LinkedList<>();
 		LinkedList<Integer> quantity = new LinkedList<>();
-		LinkedList<Integer> barcodeNumber = new LinkedList<>();
+		LinkedList<Integer> barcodeNumber = new LinkedList<>();*/
+		BinarySearchTree tree = new BinarySearchTree();
+		tree.insert(23, 150, "Ekler");
+		tree.insert(38, 200, "Baklava");
+		tree.insert(41, 50, "Pasta");
+		tree.insert(16, 500, "Bomba");
+		tree.insert(8, 800, "Kurabiye");
+		
 		Scanner scan = new Scanner(System.in);
 		
-		productNames.addFirst("Ekler");
+		/*productNames.addFirst("Ekler");
 		productNames.add("Baklava");
 		productNames.add("Pasta");
 		productNames.add("Bomba");
@@ -36,7 +43,7 @@ public class Main {
 		barcodeNumber.add(86);
 		barcodeNumber.add(95);
 		barcodeNumber.add(13);
-		barcodeNumber.add(79);
+		barcodeNumber.add(79);*/
 		/*item[0] = new Items(50,20,"Ekler");
 		item[1] = new Items(100,15,"Baklava");
 		item[2] = new Items(20,3,"Pasta");
@@ -73,9 +80,9 @@ public class Main {
 					newItem = scan.nextLine();
 					System.out.println();
 					
-					productNames.add(newItem);
+					/*productNames.add(newItem);
 					quantity.add(newQuantity);
-					barcodeNumber.add(newBarcodeNumber);
+					barcodeNumber.add(newBarcodeNumber);*/
 					
 					/*while(i<productNames.size())
 					{
@@ -90,7 +97,7 @@ public class Main {
 					i=0;*/
 					break;
 				case 2:
-					while(i<productNames.size())
+					/*while(i<productNames.size())
 					{
 						System.out.println(i+1 +": "+productNames.get(i));
 						i++;
@@ -101,11 +108,11 @@ public class Main {
 					increaseAmount = scan.nextInt();
 					
 					quantity.set(itemchoose, quantity.get(itemchoose)+increaseAmount);
-					//System.out.println(quantity.get(itemchoose));
+					//System.out.println(quantity.get(itemchoose));*/
 					i=0;
 					break;
 				case 3:
-					while(i<productNames.size())
+					/*while(i<productNames.size())
 					{
 						System.out.println(i+1 +": "+productNames.get(i));
 						i++;
@@ -115,14 +122,17 @@ public class Main {
 					System.out.print("Amount of decrease: ");
 					increaseAmount = scan.nextInt();
 					
-					quantity.set(itemchoose, quantity.get(itemchoose)-increaseAmount);
+					quantity.set(itemchoose, quantity.get(itemchoose)-increaseAmount);*/
 					i=0;
 					break;
 				case 4:
+					tree.inorder();
 					break;
 				case 5:
+					tree.postorder();
 					break;
 				case 6:
+					tree.preorder();
 					break;
 				case 0:
 					System.out.println("Terminating the program...");
